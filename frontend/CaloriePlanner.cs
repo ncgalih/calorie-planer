@@ -12,7 +12,7 @@ namespace frontend
         private static Makanan foundFood;
 
         public static User CurrentUser { get { return currentUser; } }
-        public static Makanan FoundFood { get { return foundFood; }
+        public static Makanan FoundFood { get { return foundFood; } }
 
         public static List<Makanan> ListMakanan { get; } = new();
 
