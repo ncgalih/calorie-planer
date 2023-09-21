@@ -1,35 +1,34 @@
-﻿namespace backend
+﻿namespace frontend;
+
+using System;
+
+public class Makanan
 {
-    using System;
+    private string _foodName;
+    private int _calorie;
+    private int _carbohydrate;
+    private int _fat;
 
-    public class Makanan
+    public string FoodName
     {
-        private string _foodName;
-        private int _calorie;
-        private int _carbohydrate;
-        private int _fat;
+        get { return _foodName; }
+    }
 
-        public string FoodName
-        {
-            get { return _foodName; }
-        }
+    public int Calorie
+    {
+        get { return _calorie; }
+        set { _calorie = value; }
+    }
 
-        public int Calorie
-        {
-            get { return _calorie; }
-            set { _calorie = value; }
-        }
+    public int Carbohydrate
+    {
+        get { return _carbohydrate; }
+        set { _carbohydrate = value; }
+    }
 
-        public int Carbohydrate
-        {
-            get { return _carbohydrate; }
-            set { _carbohydrate = value; }
-        }
-
-        public int Fat
-        {
-            get { return _fat; }
-            set { _fat = value; }
-        }
+    public int Fat
+    {
+        get { return _fat; }
+        set { _fat = value; }
     }
 }
