@@ -23,7 +23,7 @@ namespace frontend
             // if found
             if (true)
             {
-                foundFood = new Makanan();
+                foundFood = new Makanan(foodName);
                 return true;
             }
             else
