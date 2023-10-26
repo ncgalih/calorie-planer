@@ -31,4 +31,9 @@ public class Makanan
         get { return _fat; }
         set { _fat = value; }
     }
+
+    public Makanan(string name)
+    {
+        _foodName = name;
+    }
 }
