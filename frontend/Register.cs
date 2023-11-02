@@ -29,7 +29,18 @@ namespace frontend
 
         private void lblRegister_Click(object sender, EventArgs e)
         {
+            if(tbConfirmPassword.Text != tbPassword.Text)
+            {
+                MessageBox.Show("Konfirm passoword salah", "Confirm Password", MessageBoxButtons.OK);
+                return;
+            }
+            User user = new User();
+            user.FirstName = tbFirstName.Text;
+            user.LastName = tbLastName.Text;
+            user.Username = tbUsername.Text;
+            user.Password = tbPassword.Text;
 
+            User.Register(user);
         }
     }
 }
