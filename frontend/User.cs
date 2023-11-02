@@ -1,5 +1,9 @@
+using frontend;
+using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Security.Cryptography;
 
 public class User
 {
@@ -11,32 +15,29 @@ public class User
     
     private static List<User> userList = new List<User>();
 
-    public static bool Register(string firstName, string lastName, string username, string password, string confirmPassword)
+    public static bool Register(User user)
     {
-        if (userList.Exists(u => u.Username == username))
+        try
         {
-            Console.WriteLine("Username sudah digunakan. Silakan pilih username lain.");
+            DB.conn.Open();
+            string sql = @"select * from st_register(:_firstname, :_lastname, :_username, :_password)";
+            NpgsqlCommand cmd = new NpgsqlCommand(sql,DB.conn);
+            cmd.Parameters.AddWithValue("_firstname", user.FirstName);
+            cmd.Parameters.AddWithValue("_lastname", user.LastName);
+            cmd.Parameters.AddWithValue("_username", user.Username);
+            cmd.Parameters.AddWithValue("_password", user.Password);
+
+            if((int)cmd.ExecuteScalar() == 1)
+            {
+                MessageBox.Show("Register user berhasil", "Register", MessageBoxButtons.OK);
+            }
+            return true;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error: " + ex.Message, "Register Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
-
-        if (password != confirmPassword)
-        {
-            Console.WriteLine("Password dan konfirmasi password tidak cocok.");
-            return false;
-        }
-
-        User newUser = new User
-        {
-            FirstName = firstName,
-            LastName = lastName,
-            Username = username,
-            Password = password,
-            TotalCalories = 0 // 
-        };
-
-        userList.Add(newUser);
-        Console.WriteLine("Registrasi berhasil.");
-        return true;
     }
 
     public static bool Login(string username, string password)
