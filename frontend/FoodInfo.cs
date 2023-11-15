@@ -26,6 +26,7 @@ namespace frontend
             calorieText.Text = makanan.Calorie.ToString();
             carboText.Text = makanan.Carbohydrate.ToString();
             fatText.Text = makanan.Fat.ToString();
+            proteinText.Text = makanan.Protein.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
