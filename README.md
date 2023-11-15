@@ -27,7 +27,7 @@ Calorie Calculator
 
 **Use Case Diagram**
 
-![Use Case Diagram](USeCase.jpg)
+![Use Case Diagram](UseCase.jpg)
 
 **Activity Diagram**
 
@@ -38,6 +38,7 @@ Calorie Calculator
 ![Class Diagram](ClassDiagram.jpg)
 
 **Entity Relationship Diagram (ERD)**
+
 ![ERD](ERD.jpg)
 
 
