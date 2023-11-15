@@ -12,21 +12,15 @@ namespace frontend
 {
     public partial class FoodInfo : Form
     {
-        public Makanan makanan { get; set; }
+        public Makanan food { get; set; }
 
-        public FoodInfo(Makanan _makanan)
+        public FoodInfo()
         {
-            makanan = _makanan;
             InitializeComponent();
         }
 
         private void FoodInfo_Load(object sender, EventArgs e)
         {
-            foodname.Text = makanan.FoodName;
-            calorieText.Text = makanan.Calorie.ToString();
-            carboText.Text = makanan.Carbohydrate.ToString();
-            fatText.Text = makanan.Fat.ToString();
-            proteinText.Text = makanan.Protein.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,6 +31,16 @@ namespace frontend
         private void addFood_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            food = FoodAPI.getFoodInfo(tbFoodName.Text);
+
+            calorieText.Text = food.Calorie.ToString();
+            carboText.Text = food.Carbohydrate.ToString();
+            fatText.Text = food.Fat.ToString();
+            proteinText.Text = food.Protein.ToString();
         }
     }
 }

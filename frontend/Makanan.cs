@@ -9,6 +9,7 @@ public class Makanan
     private float _calorie;
     private float _carbohydrate;
     private float _fat;
+    private float _protein;
   
     public string FoodName
     {
@@ -33,7 +34,7 @@ public class Makanan
         set { _fat = value; }
     }
 
-    public int Protein
+    public float Protein
     {
         get { return _protein; }
         set { _protein = value; }

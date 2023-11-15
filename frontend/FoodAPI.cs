@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
+using System.Text.Json;
+using JsonObject = System.Text.Json.Nodes.JsonObject;
 
 namespace frontend
 {
@@ -17,24 +19,33 @@ namespace frontend
         public static Makanan getFoodInfo(string foodname)
         {
             Makanan food = new Makanan(foodname);
+            try
+            {
+                var client = new RestClient(uri);
+                var request = new RestRequest();
 
-            var client = new RestClient(uri);
-            var request = new RestRequest();
+                request.Method = RestSharp.Method.GET;
+                request.AddQueryParameter("app_id", appId);
+                request.AddQueryParameter("app_key", appKey);
+                request.AddQueryParameter("nutrition-type", "cooking");
+                request.AddQueryParameter("ingr", foodname);
+                IRestResponse response = client.Execute(request);
+                JsonObject obj = (JsonObject)JsonObject.Parse(response.Content);
 
-            request.Method = Method.Get;
-            request.AddQueryParameter("app_id", appId);
-            request.AddQueryParameter("app_key", appKey);
-            request.AddQueryParameter("nutrition-type", "cooking");
-            request.AddQueryParameter("ingr", foodname);
+                food.Calorie = (float)obj["calories"];
+                JsonObject nutrient = (JsonObject)obj["totalNutrients"];
+                if (nutrient.ToString() == "{}") throw new Exception();
+                food.Fat = (float)nutrient["FAT"]["quantity"];
+                food.Carbohydrate = (float)nutrient["CHOCDF.net"]["quantity"];
+                food.Protein = (float)nutrient["PROCNT"]["quantity"];
 
-            RestResponse response = client.Execute(request);
-            JsonObject obj = (JsonObject)JsonObject.Parse(response.Content);
-
-            food.Calorie = (float)obj["calories"];
-            food.Fat = (float)obj["totalNutrients"]["FAT"]["quantity"];
-            food.Carbohydrate = (float)obj["totalNutrients"]["CHOCDF.net"]["quantity"];
-            //.Show((int)(obj["totalNutrients"]["FAT"]["quantity"].ToString()))
-            return food;
+                return food;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("food not found");
+                return food;
+            }
         }
     }
 }
