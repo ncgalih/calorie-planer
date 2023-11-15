@@ -19,8 +19,8 @@ namespace frontend
 
         private void addFood_Click(object sender, EventArgs e)
         {
-            SelectFood selectFood = new SelectFood();
-            selectFood.Show();
+            FoodInfo foodInfo = new FoodInfo();
+            foodInfo.Show();
         }
 
         private void label3_Click(object sender, EventArgs e)
