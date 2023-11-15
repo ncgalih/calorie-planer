@@ -36,6 +36,7 @@ namespace frontend
                 makanan.Calorie = 10;
                 makanan.Carbohydrate = 20;
                 makanan.Fat = 30;
+                makanan.Protein = 40;
                 FoodInfo foodInfo = new FoodInfo(makanan);
                 this.Close();
                 foodInfo.Show();

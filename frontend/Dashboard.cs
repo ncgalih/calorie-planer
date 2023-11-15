@@ -22,5 +22,10 @@ namespace frontend
             SelectFood selectFood = new SelectFood();
             selectFood.Show();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
