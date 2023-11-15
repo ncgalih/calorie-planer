@@ -6,7 +6,7 @@ namespace frontend
 {
     public partial class Register : Form
     {
-        public static string connstring = "Host=localhost;Port=5432;Username=postgres;Password=informatika;Database=CaloriePlaner";
+        public static string connstring = "Host=157.230.243.49;Port=5432;Username=postgres;Password=NcFighter;Database=calorie-planer";
         public static NpgsqlConnection conn = new NpgsqlConnection(connstring);
 
         public Register()
@@ -25,7 +25,7 @@ namespace frontend
             await using var conn = new NpgsqlConnection(connstring);
             await conn.OpenAsync();
 
-            var checkCmd = new NpgsqlCommand("SELECT * FROM User WHERE username = @username", conn);
+            var checkCmd = new NpgsqlCommand("SELECT * FROM tb_user WHERE username = @username", conn);
             checkCmd.Parameters.AddWithValue("@username", tbUsername.Text);
 
             await using var reader = await checkCmd.ExecuteReaderAsync();
@@ -36,7 +36,7 @@ namespace frontend
             }
             reader.Close();
 
-            var insertCmd = new NpgsqlCommand("INSERT INTO User (first_name, last_name, username, password) VALUES (@first_name, @last_name, @username, @password)", conn);
+            var insertCmd = new NpgsqlCommand("INSERT INTO tb_user (first_name, last_name, username, password) VALUES (@first_name, @last_name, @username, @password)", conn);
             insertCmd.Parameters.AddWithValue("@first_name", tbFirstName.Text);
             insertCmd.Parameters.AddWithValue("@last_name", tbLastName.Text);
             insertCmd.Parameters.AddWithValue("@username", tbUsername.Text);

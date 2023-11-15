@@ -6,7 +6,7 @@ namespace frontend
 {
     public partial class Login : Form
     {
-        public static string connstring = "Host=localhost;Port=5432;Username=postgres;Password=informatika;Database=CaloriePlaner";
+        public static string connstring = "Host=157.230.243.49;Port=5432;Username=postgres;Password=NcFighter;Database=calorie-planer";
         public static NpgsqlConnection conn = new NpgsqlConnection(connstring);
 
         public Login()
@@ -19,7 +19,7 @@ namespace frontend
             string username = tbUsername.Text;
             string password = tbPassword.Text;
 
-            string query = "SELECT * FROM User WHERE username = @username AND password = @password";
+            string query = "SELECT * FROM tb_user WHERE username = @username AND password = @password";
             await using var conn = new NpgsqlConnection(connstring);
             await conn.OpenAsync();
 
@@ -32,7 +32,7 @@ namespace frontend
             if (await reader.ReadAsync())
             {
                 MessageBox.Show("Login successful!");
-                this.Close();
+                this.Hide();
                 Dashboard dashboardForm = new Dashboard();
                 dashboardForm.Show();
             }
