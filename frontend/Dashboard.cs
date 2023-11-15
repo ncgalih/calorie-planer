@@ -27,5 +27,21 @@ namespace frontend
         {
 
         }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            List<Makanan> list = DB.SelectFood();
+            groupBox1.Text = "List Food";
+            foreach (Makanan makanan in list)
+            {
+                groupBox1.Text += "\n-" + makanan.FoodName + "\t" +makanan.Calorie +"\t"+ makanan.Fat + "\t" +makanan.Carbohydrate + "\t" +makanan.Protein;
+            }
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

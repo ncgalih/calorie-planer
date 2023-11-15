@@ -39,5 +39,38 @@ namespace frontend
             }
             return false;
         }
+
+        public static List<Makanan> SelectFood()
+        {
+            List<Makanan> list = new List<Makanan>();
+            try
+            {
+                conn.Open();
+                var cmd = new NpgsqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM food";
+                NpgsqlDataReader reader = cmd.ExecuteReader();
+
+                // Membaca hasil query
+                while (reader.Read())
+                {
+                    Makanan food = new Makanan(reader.GetString(0));
+                    food.Calorie = reader.GetFloat(1);
+                    food.Fat = reader.GetFloat(2);
+                    food.Carbohydrate = reader.GetFloat(3);
+                    food.Protein = reader.GetFloat(4);
+                    list.Append(food);
+                }
+
+                // Tutup koneksi dan reader setelah selesai menggunakan
+                reader.Close();
+                conn.Close();
+                return list;
+            }
+            catch { 
+                
+            }
+            return list;
+            }
     }
 }
