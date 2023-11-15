@@ -12,9 +12,14 @@ namespace frontend
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        public static Dashboard dashboard;
+        public static string username;
+        public Dashboard(string _username)
         {
+            dashboard = this;
+            username = _username;
             InitializeComponent();
+            LoadData();
         }
 
         private void addFood_Click(object sender, EventArgs e)
@@ -23,25 +28,10 @@ namespace frontend
             foodInfo.Show();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        public void LoadData()
         {
-
-        }
-
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-            List<Makanan> list = DB.SelectFood();
-            groupBox1.Text = "List Food";
-            foreach (Makanan makanan in list)
-            {
-                groupBox1.Text += "\n-" + makanan.FoodName + "\t" +makanan.Calorie +"\t"+ makanan.Fat + "\t" +makanan.Carbohydrate + "\t" +makanan.Protein;
-            }
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
+            DataTable data = DB.SelectFood();
+            dgvFood.DataSource = data;
         }
     }
 }

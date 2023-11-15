@@ -16,61 +16,50 @@ namespace frontend
 
         public static bool insertFood(Makanan food)
         {
+            bool status = false;
             try
             {
                 conn.Open();
                 var cmd = new NpgsqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "INSERT INTO food (name, calorie, fat, carbo, protein) VALUES (@name, @calorie, @fat, @carbo, @protein)";
+                cmd.CommandText = "INSERT INTO food (name, calorie, fat, carbo, protein, username) VALUES (@name, @calorie, @fat, @carbo, @protein, @username)";
 
                 cmd.Parameters.AddWithValue("@name", food.FoodName);
                 cmd.Parameters.AddWithValue("@calorie", food.Calorie);
                 cmd.Parameters.AddWithValue("@fat", food.Fat);
                 cmd.Parameters.AddWithValue("@carbo", food.Carbohydrate);
                 cmd.Parameters.AddWithValue("@protein", food.Protein);
+                cmd.Parameters.AddWithValue("@username", Dashboard.username);
 
                 if (cmd.ExecuteNonQuery() == 1)
-                    return true;
+                    status = true;
             } 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return false;
             }
-            return false;
+            conn.Close();
+            return status;
         }
 
-        public static List<Makanan> SelectFood()
+        public static DataTable SelectFood()
         {
-            List<Makanan> list = new List<Makanan>();
+            DataTable dt = new DataTable();
             try
             {
                 conn.Open();
                 var cmd = new NpgsqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT * FROM food";
+                cmd.CommandText = "SELECT name, calorie, fat, carbo, protein FROM food WHERE username = @username";
+                cmd.Parameters.AddWithValue("@username", Dashboard.username);
                 NpgsqlDataReader reader = cmd.ExecuteReader();
-
-                // Membaca hasil query
-                while (reader.Read())
-                {
-                    Makanan food = new Makanan(reader.GetString(0));
-                    food.Calorie = reader.GetFloat(1);
-                    food.Fat = reader.GetFloat(2);
-                    food.Carbohydrate = reader.GetFloat(3);
-                    food.Protein = reader.GetFloat(4);
-                    list.Append(food);
-                }
-
-                // Tutup koneksi dan reader setelah selesai menggunakan
-                reader.Close();
+                dt.Load(reader);
                 conn.Close();
-                return list;
             }
-            catch { 
-                
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
             }
-            return list;
-            }
+            return dt;
+        }
     }
 }

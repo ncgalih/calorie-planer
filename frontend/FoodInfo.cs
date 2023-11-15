@@ -31,6 +31,7 @@ namespace frontend
         private void addFood_Click(object sender, EventArgs e)
         {
             DB.insertFood(food);
+            Dashboard.dashboard.LoadData();
             this.Close();
         }
 
