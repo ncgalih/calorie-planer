@@ -22,5 +22,12 @@ namespace frontend
             SelectFood selectFood = new SelectFood();
             selectFood.Show();
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //display food info and it calories from postgres database here
+            
+
+        }
     }
 }

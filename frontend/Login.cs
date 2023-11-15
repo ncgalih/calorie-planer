@@ -1,30 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace frontend
 {
     public partial class Login : Form
     {
+        private string connstring = "Host=localhost;Port=5432;Username=postgres;Password=password;Database=database";
+
         public Login()
         {
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
+            string username = tbUsername.Text;
+            string password = tbPassword.Text;
 
+            string query = "SELECT * FROM User WHERE username = @username AND password = @password";
+            await using var conn = new NpgsqlConnection(connstring);
+            await conn.OpenAsync();
+
+            await using var cmd = new NpgsqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+
+            await using var reader = await cmd.ExecuteReaderAsync();
+
+            if (await reader.ReadAsync())
+            {
+                MessageBox.Show("Login successful!");
+                this.Close();
+                Dashboard dashboardForm = new Dashboard();
+                dashboardForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password.");
+            }
         }
 
-        private void lblUsername_Click(object sender, EventArgs e)
+        private void btnRegister_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Register registerForm = new Register();
+            registerForm.Show();
         }
     }
 }

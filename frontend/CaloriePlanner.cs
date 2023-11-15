@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Npgsql;
+using System.Windows.Forms;
+using System.Data;
+
 
 namespace frontend
 {
@@ -11,12 +15,12 @@ namespace frontend
         private static User currentUser;
         private static Makanan foundFood;
 
+        private static List<Makanan> ListMakanan { get; } = new();
+
         public static User CurrentUser { get { return currentUser; } }
         public static Makanan FoundFood { get { return foundFood; } }
 
-        public static List<Makanan> ListMakanan { get; } = new();
-
-        public static bool cariMakanan(string foodName)
+        private static bool cariMakanan(string foodName)
         {
             // cari data makanan dari API
 
@@ -32,7 +36,7 @@ namespace frontend
             }
         }
 
-        public static void simpanMakanan()
+        protected static void simpanMakanan()
         {
             ListMakanan.Append(foundFood);
             currentUser.CalorieCount(foundFood.Calorie);
