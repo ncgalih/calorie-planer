@@ -33,7 +33,7 @@ namespace frontend
             {
                 MessageBox.Show("Login successful!");
                 this.Hide();
-                Dashboard dashboardForm = new Dashboard();
+                Dashboard dashboardForm = new Dashboard(username);
                 dashboardForm.Show();
             }
             else
