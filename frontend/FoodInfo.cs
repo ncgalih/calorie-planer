@@ -30,6 +30,7 @@ namespace frontend
 
         private void addFood_Click(object sender, EventArgs e)
         {
+            DB.insertFood(food);
             this.Close();
         }
 

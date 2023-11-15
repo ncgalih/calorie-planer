@@ -5,12 +5,39 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace frontend
 {
     internal class DB
     {
-        public static string connstring = "Host=localhost;Port=5432;Username=postgres;Password=informatika;Database=CaloriePlaner";
+        public static string connstring = "Host=157.230.243.49;Port=5432;Username=postgres;Password=NcFighter;Database=calorie-planer";
         public static NpgsqlConnection conn = new NpgsqlConnection(connstring);
+
+        public static bool insertFood(Makanan food)
+        {
+            try
+            {
+                conn.Open();
+                var cmd = new NpgsqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "INSERT INTO food (name, calorie, fat, carbo, protein) VALUES (@name, @calorie, @fat, @carbo, @protein)";
+
+                cmd.Parameters.AddWithValue("@name", food.FoodName);
+                cmd.Parameters.AddWithValue("@calorie", food.Calorie);
+                cmd.Parameters.AddWithValue("@fat", food.Fat);
+                cmd.Parameters.AddWithValue("@carbo", food.Carbohydrate);
+                cmd.Parameters.AddWithValue("@protein", food.Protein);
+
+                if (cmd.ExecuteNonQuery() == 1)
+                    return true;
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            return false;
+        }
     }
 }
