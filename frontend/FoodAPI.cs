@@ -35,9 +35,24 @@ namespace frontend
                 food.Calorie = (float)obj["calories"];
                 JsonObject nutrient = (JsonObject)obj["totalNutrients"];
                 if (nutrient.ToString() == "{}") throw new Exception();
-                food.Fat = (float)nutrient["FAT"]["quantity"];
-                food.Carbohydrate = (float)nutrient["CHOCDF.net"]["quantity"];
-                food.Protein = (float)nutrient["PROCNT"]["quantity"];
+
+                JsonObject oFat = (JsonObject)nutrient["FAT"];
+                if(oFat != null)
+                {
+                    food.Fat = (float)oFat["quantity"];
+                }
+
+                JsonObject oCarbo = (JsonObject)nutrient["CHOCDF.net"];
+                if(oCarbo != null)
+                {
+                    food.Carbohydrate = (float)oCarbo["quantity"];
+                }
+
+                JsonObject oProtein = (JsonObject)nutrient["PROCNT"];
+                if(oProtein != null)
+                {
+                    food.Protein = (float)oProtein["quantity"];
+                }
 
                 return food;
             }
