@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbFoodName = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.listFoundFood = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbFoodName
             // 
-            this.textBox1.Location = new System.Drawing.Point(65, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(471, 31);
-            this.textBox1.TabIndex = 0;
+            this.tbFoodName.Location = new System.Drawing.Point(65, 68);
+            this.tbFoodName.Name = "tbFoodName";
+            this.tbFoodName.Size = new System.Drawing.Size(471, 31);
+            this.tbFoodName.TabIndex = 0;
             // 
             // button1
             // 
@@ -93,7 +93,7 @@
             this.Controls.Add(this.listFoundFood);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbFoodName);
             this.Name = "SelectFood";
             this.Text = "SelectFood";
             this.Load += new System.EventHandler(this.SelectFood_Load);
@@ -104,7 +104,7 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox tbFoodName;
         private Button button1;
         private Button button2;
         private Label label1;

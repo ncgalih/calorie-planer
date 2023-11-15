@@ -45,9 +45,8 @@ namespace frontend
 
         private void button1_Click(object sender, EventArgs e)
         {
-            listFoundFood.Items.Clear();
-            listFoundFood.Items.Add("Makanan A");
-            listFoundFood.Items.Add("Makanan B");
+            Makanan food = FoodAPI.getFoodInfo(tbFoodName.Text);
+            MessageBox.Show(food.Calorie.ToString() + "\n" + food.Fat.ToString() + '\n' + food.Carbohydrate.ToString());
         }
     }
 }
