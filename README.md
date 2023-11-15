@@ -10,7 +10,7 @@ Anggota 3 : Nikolas Galih Saputro - 21/482747/TK/53361
 
 **PROJECT JUNIOR TEKNOLOGI INFORMASI**
 
-**DEPARTEMEN Teknik Elektro dan Teknologi Informasi, Fakultas Teknik, Universitas Gadjah Mada**
+**Departemen Teknik Elektro dan Teknologi Informasi, Fakultas Teknik, Universitas Gadjah Mada**
 
 "Calorie Planner" adalah sebuah aplikasi yang memungkinkan pengguna untuk mencatat asupan makanan harian mereka dan menghitung total kalori berdasarkan makanan yang dipilih. Aplikasi ini juga memberikan detail terkait nilai nutrisi dari makanan yang dipilih, memungkinkan pengguna untuk melihat seimbangnya nutrisi yang mereka konsumsi. Selain itu, pengguna dapat memantau dan menganalisis asupan makanan dari waktu ke waktu, serta menerima rekomendasi yang disesuaikan untuk mencapai tujuan nutrisi mereka. Dengan fokus pada pemantauan asupan makanan dan memberikan wawasan tentang nilai nutrisi, aplikasi ini membantu pengguna dalam mengelola pola makan sehat dan mencapai tujuan kesehatan atau nutrisi yang diinginkan.
 
