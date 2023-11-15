@@ -1,7 +1,7 @@
 # Calorie Planner
-Nama Aplikasi       : Calorie Planner
-Katergori Aplikasi  : Productivity 
-Tipe Aplikasi       : Windows Form
+Nama Aplikasi       : Calorie Planner  
+Katergori Aplikasi  : Productivity  
+Tipe Aplikasi       : Windows Form  
 
 Ketua Kelompok : Nikolas Galih Saputro - 21/482747/TK/53361  
 Anggota 1 : Athilla Azka Havillah - 21/474647/TK/52362  
