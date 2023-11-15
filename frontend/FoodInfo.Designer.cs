@@ -28,130 +28,161 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.calorieText = new System.Windows.Forms.TextBox();
-            this.carboText = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.fatText = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.foodname = new System.Windows.Forms.Label();
-            this.addFood = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            calorieText = new TextBox();
+            carboText = new TextBox();
+            label3 = new Label();
+            fatText = new TextBox();
+            label4 = new Label();
+            foodname = new Label();
+            addFood = new Button();
+            button1 = new Button();
+            proteinText = new TextBox();
+            label5 = new Label();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(243, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(303, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Food Nutrition Information";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(194, 29);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(251, 28);
+            label1.TabIndex = 0;
+            label1.Text = "Food Nutrition Information";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(199, 148);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 32);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Calorie";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(159, 118);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(74, 28);
+            label2.TabIndex = 1;
+            label2.Text = "Calorie";
             // 
             // calorieText
             // 
-            this.calorieText.Location = new System.Drawing.Point(398, 151);
-            this.calorieText.Name = "calorieText";
-            this.calorieText.Size = new System.Drawing.Size(197, 31);
-            this.calorieText.TabIndex = 2;
+            calorieText.Location = new Point(318, 121);
+            calorieText.Margin = new Padding(2);
+            calorieText.Name = "calorieText";
+            calorieText.Size = new Size(158, 27);
+            calorieText.TabIndex = 2;
             // 
             // carboText
             // 
-            this.carboText.Location = new System.Drawing.Point(398, 215);
-            this.carboText.Name = "carboText";
-            this.carboText.Size = new System.Drawing.Size(197, 31);
-            this.carboText.TabIndex = 4;
+            carboText.Location = new Point(318, 172);
+            carboText.Margin = new Padding(2);
+            carboText.Name = "carboText";
+            carboText.Size = new Size(158, 27);
+            carboText.TabIndex = 4;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(199, 212);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 32);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Carbohydrate";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(159, 170);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(134, 28);
+            label3.TabIndex = 3;
+            label3.Text = "Carbohydrate";
             // 
             // fatText
             // 
-            this.fatText.Location = new System.Drawing.Point(398, 278);
-            this.fatText.Name = "fatText";
-            this.fatText.Size = new System.Drawing.Size(197, 31);
-            this.fatText.TabIndex = 6;
+            fatText.Location = new Point(318, 222);
+            fatText.Margin = new Padding(2);
+            fatText.Name = "fatText";
+            fatText.Size = new Size(158, 27);
+            fatText.TabIndex = 6;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(199, 275);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 32);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Fat";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(159, 220);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(38, 28);
+            label4.TabIndex = 5;
+            label4.Text = "Fat";
             // 
             // foodname
             // 
-            this.foodname.AutoSize = true;
-            this.foodname.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.foodname.Location = new System.Drawing.Point(318, 78);
-            this.foodname.Name = "foodname";
-            this.foodname.Size = new System.Drawing.Size(166, 38);
-            this.foodname.TabIndex = 7;
-            this.foodname.Text = "Food Name";
+            foodname.AutoSize = true;
+            foodname.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            foodname.Location = new Point(254, 62);
+            foodname.Margin = new Padding(2, 0, 2, 0);
+            foodname.Name = "foodname";
+            foodname.Size = new Size(140, 32);
+            foodname.TabIndex = 7;
+            foodname.Text = "Food Name";
             // 
             // addFood
             // 
-            this.addFood.Location = new System.Drawing.Point(589, 368);
-            this.addFood.Name = "addFood";
-            this.addFood.Size = new System.Drawing.Size(169, 40);
-            this.addFood.TabIndex = 8;
-            this.addFood.Text = "Add To Daily";
-            this.addFood.UseVisualStyleBackColor = true;
-            this.addFood.Click += new System.EventHandler(this.addFood_Click);
+            addFood.Location = new Point(514, 336);
+            addFood.Margin = new Padding(2);
+            addFood.Name = "addFood";
+            addFood.Size = new Size(135, 32);
+            addFood.TabIndex = 8;
+            addFood.Text = "Add To Daily";
+            addFood.UseVisualStyleBackColor = true;
+            addFood.Click += addFood_Click;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(54, 368);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 40);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Location = new Point(42, 336);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(86, 32);
+            button1.TabIndex = 9;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // proteinText
+            // 
+            proteinText.Location = new Point(318, 275);
+            proteinText.Name = "proteinText";
+            proteinText.Size = new Size(158, 27);
+            proteinText.TabIndex = 10;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(159, 271);
+            label5.Name = "label5";
+            label5.Size = new Size(78, 28);
+            label5.TabIndex = 11;
+            label5.Text = "Protein";
             // 
             // FoodInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.addFood);
-            this.Controls.Add(this.foodname);
-            this.Controls.Add(this.fatText);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.carboText);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.calorieText);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Name = "FoodInfo";
-            this.Text = "FoodInfo";
-            this.Load += new System.EventHandler(this.FoodInfo_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(683, 393);
+            Controls.Add(label5);
+            Controls.Add(proteinText);
+            Controls.Add(button1);
+            Controls.Add(addFood);
+            Controls.Add(foodname);
+            Controls.Add(fatText);
+            Controls.Add(label4);
+            Controls.Add(carboText);
+            Controls.Add(label3);
+            Controls.Add(calorieText);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Margin = new Padding(2);
+            Name = "FoodInfo";
+            Text = "FoodInfo";
+            Load += FoodInfo_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -166,5 +197,7 @@
         private Label foodname;
         private Button addFood;
         private Button button1;
+        private TextBox proteinText;
+        private Label label5;
     }
 }
