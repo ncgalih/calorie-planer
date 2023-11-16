@@ -32,6 +32,21 @@ namespace frontend
         {
             DataTable data = DB.SelectFood();
             dgvFood.DataSource = data;
+
+            double totalCalories = 0;
+            foreach (DataRow row in data.Rows)
+            {
+                double calorie = Convert.ToDouble(row["calorie"]);
+                totalCalories += calorie;
+            }
+
+            // Menampilkan total kalori ke dalam tbTotalCalorie
+            tbTotalCalorie.Text = totalCalories.ToString();
+        }
+
+        private void tbTotalCalorie_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
