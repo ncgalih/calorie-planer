@@ -8,8 +8,8 @@ Anggota 1 : Athilla Azka Havillah - 21/474647/TK/52362
 Anggota 2 : Rico Frijaya S. Pane - 21/480631/TK/53032  
 Anggota 3 : Nikolas Galih Saputro - 21/482747/TK/53361  
 
-**API Documentation Used**  
-[API Documentation](https://www.edamam.com/)
+**Web API Documentation Used**  
+[Web API Documentation](https://www.edamam.com/)
 
 **Panduan Penggunaan Aplikasi**  
 1. Untuk pengguna yang belum memiliki akun, dapat melakukan registrasi terlebih dahulu.  
