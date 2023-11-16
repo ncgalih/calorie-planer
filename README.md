@@ -16,7 +16,7 @@ Anggota 3 : Nikolas Galih Saputro - 21/482747/TK/53361
 2. Pengguna yang telah memiliki akun dapat langsung melakukan login.  
 3. Setelah berhasil login, pengguna akan diarahkan ke form Dashboard. Di sini, informasi tentang makanan yang dipilih akan ditampilkan, termasuk nilai kalori, lemak, karbohidrat, dan protein dari setiap makanan. Total kalori dari semua makanan yang dipilih juga akan ditampilkan.  
 4. Untuk menambahkan makanan baru, klik tombol "Add Food" yang ada pada form Dashboard. Hal ini akan membuka form FoodInfo.  
-5. Pada form FoodInfo, pengguna dapat mencari makanan yang ingin diketahui nilai kalorinya (sesuai dengan API yang digunakan). Pastikan makanan yang dicari memiliki nilai kuantitatif (contoh benar: 1 kentang; contoh salah: kentang).  
+5. Pada form FoodInfo, pengguna dapat mencari makanan yang ingin diketahui nilai kalorinya (sesuai dengan API yang digunakan). Pastikan makanan yang dicari memiliki nilai kuantitatif (contoh benar: 2 potato; contoh salah: potato). Makanan yang ingin dicari juga hanya boleh 1 jenis makanan. Jika ingin menambahkannya, maka makanan pertama harus di tambahkan terlebih dahulu ke daftar harian yang ada di form Dashboard, kemudian mengulanginya untuk makanan kedua dan seterusnya.
 6. Setelah menemukan makanan yang dicari, nilai kalori, karbohidrat, lemak, dan protein akan ditampilkan pada form FoodInfo.  
 7. Untuk menambahkan makanan ke daftar harian, klik tombol "Add to Daily" yang ada pada form FoodInfo. Hal ini akan memperbarui informasi di form Dashboard.  
 
