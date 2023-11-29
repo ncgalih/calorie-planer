@@ -56,5 +56,35 @@ namespace frontend
             Login loginForm = new Login();
             loginForm.Show();
         }
+
+        private void lblRegister_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFirstName_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblLastName_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblPassword_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void lblConfirmPassword_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

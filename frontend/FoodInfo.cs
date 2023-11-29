@@ -44,5 +44,10 @@ namespace frontend
             fatText.Text = food.Fat.ToString();
             proteinText.Text = food.Protein.ToString();
         }
+
+        private void FoodInfo_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

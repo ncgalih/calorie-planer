@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             label1 = new Label();
             label3 = new Label();
             addFood = new Button();
@@ -40,11 +41,13 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(304, 16);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(251, 9);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(170, 32);
+            label1.Size = new Size(226, 41);
             label1.TabIndex = 0;
             label1.Text = "Daily Food List";
             // 
@@ -60,18 +63,20 @@
             // 
             // addFood
             // 
+            addFood.BackColor = SystemColors.Control;
             addFood.Location = new Point(577, 362);
             addFood.Margin = new Padding(2);
             addFood.Name = "addFood";
             addFood.Size = new Size(135, 32);
             addFood.TabIndex = 9;
             addFood.Text = "Add Food";
-            addFood.UseVisualStyleBackColor = true;
+            addFood.UseVisualStyleBackColor = false;
             addFood.Click += addFood_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = SystemColors.Control;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(43, 359);
             label4.Margin = new Padding(2, 0, 2, 0);
@@ -82,6 +87,7 @@
             // 
             // tbTotalCalorie
             // 
+            tbTotalCalorie.BackColor = SystemColors.Control;
             tbTotalCalorie.Location = new Point(234, 362);
             tbTotalCalorie.Margin = new Padding(2);
             tbTotalCalorie.Name = "tbTotalCalorie";
@@ -93,7 +99,7 @@
             // 
             dgvFood.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvFood.Location = new Point(43, 62);
-            dgvFood.Margin = new Padding(2, 2, 2, 2);
+            dgvFood.Margin = new Padding(2);
             dgvFood.Name = "dgvFood";
             dgvFood.RowHeadersWidth = 62;
             dgvFood.RowTemplate.Height = 33;
@@ -104,6 +110,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.InactiveCaption;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(751, 423);
             Controls.Add(dgvFood);
             Controls.Add(tbTotalCalorie);
@@ -114,6 +123,7 @@
             Margin = new Padding(2);
             Name = "Dashboard";
             Text = "Dashboard";
+            Load += Dashboard_Load;
             ((System.ComponentModel.ISupportInitialize)dgvFood).EndInit();
             ResumeLayout(false);
             PerformLayout();
