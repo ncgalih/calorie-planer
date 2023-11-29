@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             btnLogin = new Button();
             btnRegister = new Button();
             tbUsername = new TextBox();
@@ -39,76 +40,85 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(199, 190);
-            btnLogin.Margin = new Padding(3, 2, 3, 2);
+            btnLogin.BackColor = SystemColors.Control;
+            btnLogin.Location = new Point(196, 253);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(82, 22);
+            btnLogin.Size = new Size(94, 29);
             btnLogin.TabIndex = 0;
             btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
             // btnRegister
             // 
-            btnRegister.Location = new Point(328, 190);
-            btnRegister.Margin = new Padding(3, 2, 3, 2);
+            btnRegister.BackColor = SystemColors.Control;
+            btnRegister.Location = new Point(344, 253);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(82, 22);
+            btnRegister.Size = new Size(94, 29);
             btnRegister.TabIndex = 1;
             btnRegister.Text = "Register";
-            btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.UseVisualStyleBackColor = false;
             btnRegister.Click += btnRegister_Click;
             // 
             // tbUsername
             // 
-            tbUsername.Location = new Point(199, 106);
-            tbUsername.Margin = new Padding(3, 2, 3, 2);
+            tbUsername.BackColor = SystemColors.Control;
+            tbUsername.Location = new Point(196, 138);
             tbUsername.Name = "tbUsername";
-            tbUsername.Size = new Size(212, 23);
+            tbUsername.Size = new Size(242, 27);
             tbUsername.TabIndex = 2;
             // 
             // tbPassword
             // 
-            tbPassword.Location = new Point(199, 147);
-            tbPassword.Margin = new Padding(3, 2, 3, 2);
+            tbPassword.BackColor = SystemColors.Control;
+            tbPassword.Location = new Point(196, 196);
             tbPassword.Name = "tbPassword";
-            tbPassword.Size = new Size(212, 23);
+            tbPassword.Size = new Size(242, 27);
             tbPassword.TabIndex = 3;
             tbPassword.UseSystemPasswordChar = true;
             // 
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(103, 109);
+            lblUsername.BackColor = Color.Transparent;
+            lblUsername.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUsername.ForeColor = Color.White;
+            lblUsername.Location = new Point(78, 138);
             lblUsername.Name = "lblUsername";
-            lblUsername.Size = new Size(66, 15);
+            lblUsername.Size = new Size(99, 23);
             lblUsername.TabIndex = 4;
             lblUsername.Text = "Username :";
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(108, 149);
+            lblPassword.BackColor = Color.Transparent;
+            lblPassword.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPassword.ForeColor = Color.White;
+            lblPassword.Location = new Point(82, 196);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(63, 15);
+            lblPassword.Size = new Size(95, 23);
             lblPassword.TabIndex = 5;
             lblPassword.Text = "Password :";
             // 
             // lblLogin
             // 
             lblLogin.AutoSize = true;
-            lblLogin.Font = new Font("Segoe UI Semilight", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lblLogin.Location = new Point(254, 53);
+            lblLogin.BackColor = Color.Transparent;
+            lblLogin.Font = new Font("Arial Rounded MT Bold", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lblLogin.ForeColor = SystemColors.Control;
+            lblLogin.Location = new Point(257, 74);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(81, 32);
+            lblLogin.Size = new Size(113, 34);
             lblLogin.TabIndex = 6;
             lblLogin.Text = "LOGIN";
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(558, 269);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(638, 359);
             Controls.Add(lblLogin);
             Controls.Add(lblPassword);
             Controls.Add(lblUsername);
@@ -116,7 +126,6 @@
             Controls.Add(tbUsername);
             Controls.Add(btnRegister);
             Controls.Add(btnLogin);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Login";
             Text = "Login";
             ResumeLayout(false);
