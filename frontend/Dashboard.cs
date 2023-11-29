@@ -19,9 +19,30 @@ namespace frontend
             dashboard = this;
             username = _username;
             InitializeComponent();
+
+            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+            deleteButtonColumn.Name = "DeleteColumn";
+            deleteButtonColumn.Text = "Delete";
+            deleteButtonColumn.UseColumnTextForButtonValue = true;
+
+            dgvFood.Columns.Add(deleteButtonColumn);
+
+            dgvFood.CellContentClick += new DataGridViewCellEventHandler(dgvFood_CellContentClick);
+
             LoadData();
         }
+        private void dgvFood_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvFood.Columns["DeleteColumn"].Index && e.RowIndex >= 0)
+            {
 
+                string foodName = dgvFood.Rows[e.RowIndex].Cells["name"].Value.ToString();
+
+                DB.DeleteFood(foodName);
+
+                LoadData();
+            }
+        }
         private void addFood_Click(object sender, EventArgs e)
         {
             FoodInfo foodInfo = new FoodInfo();

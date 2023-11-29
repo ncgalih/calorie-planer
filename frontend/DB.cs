@@ -61,5 +61,28 @@ namespace frontend
             }
             return dt;
         }
+        public static bool DeleteFood(string foodName)
+        {
+            bool status = false;
+            try
+            {
+                conn.Open();
+                var cmd = new NpgsqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "DELETE FROM food WHERE name = @name AND username = @username";
+
+                cmd.Parameters.AddWithValue("@name", foodName);
+                cmd.Parameters.AddWithValue("@username", Dashboard.username);
+
+                if (cmd.ExecuteNonQuery() > 0)
+                    status = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
+            return status;
+        }
     }
 }
